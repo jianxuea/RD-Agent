@@ -28,7 +28,7 @@ class QlibFBWorkspace(FBWorkspace):
         # Run the Qlib backtest
         execute_qlib_log = qtde.check_output(
             local_path=str(self.workspace_path),
-            entry=f"qrun {qlib_config_name}",
+            entry=f"python -m qlib.run {qlib_config_name}",
             env=run_env,
         )
         logger.log_object(execute_qlib_log, tag="Qlib_execute_log")
